@@ -1,11 +1,11 @@
 import './App.css';
-import Header from './components/Header/Header';
+import Routing from './components/Routing';
 
 function App() {
   return (
-    <div clasName="App">
-      <Header />
-    </div>
+    <>
+      <Routing/>
+    </>
   );
 }
 

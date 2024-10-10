@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ setPubAddress }) => {
   const [account, setAccount] = useState(null);
 
   const connectWallet = async () => {
@@ -23,12 +24,25 @@ const Header = () => {
   useEffect(() => {
     if (account) {
       console.log("Connected account:", account);
+      setPubAddress(account);
     }
   }, [account]);
 
   return (
     <header className="flex justify-between items-center p-4 bg-gray-800 text-white">
-      <h1 className="m-0">NFT Minter</h1>
+      <h1 className="m-0 text-3xl">NFT Minter</h1>
+
+      <div className="w-5/6 lg:text-xl pr-10 flex justify-center">
+        <ul className="flex justify-around w-1/2">
+          <li key={1} className="cursor-pointer border-white border rounded-lg p-2 hover:text-blue-500">
+            <Link to="/">NFT List</Link>
+          </li>
+          <li key={2} className="cursor-pointer border-white border rounded-lg p-2 hover:text-blue-500">
+            <Link to="/create-nft">Create NFT</Link>
+          </li>
+        </ul>
+      </div>
+
       <button
         onClick={connectWallet}
         className="px-4 py-2 bg-blue-400 text-gray-900 rounded-lg cursor-pointer text-base"
