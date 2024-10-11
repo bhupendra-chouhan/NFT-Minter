@@ -1,8 +1,8 @@
 import React from 'react'
 import AppLayout from './AppLayout'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import NftList from './Body/NftList'
-import CreateNft from './Body/CreateNft'
+import NftList from './Body/NftList/NftList'
+import CreateNft from './Body/CreateNft/CreateNft'
 import Error from './Error'
 
 const Routing = () => {

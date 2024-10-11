@@ -3,7 +3,7 @@ import NftCard from './NftCard'
 
 const NftList = () => {
   return (
-    <div className='text-red-500'>
+    <div>
         <NftCard />
     </div>
   )

@@ -35,7 +35,7 @@ const Header = ({ setPubAddress }) => {
       <div className="w-5/6 lg:text-xl pr-10 flex justify-center">
         <ul className="flex justify-around w-1/2">
           <li key={1} className="cursor-pointer border-white border rounded-lg p-2 hover:text-blue-500">
-            <Link to="/">NFT List</Link>
+            <Link to="/">NFT Library</Link>
           </li>
           <li key={2} className="cursor-pointer border-white border rounded-lg p-2 hover:text-blue-500">
             <Link to="/create-nft">Create NFT</Link>
