@@ -4,8 +4,8 @@
 const { buildModule } = require("@nomicfoundation/hardhat-ignition/modules");
 
 module.exports = buildModule("NFTModule", (m) => {
-  // Deploying the NFT contract with the constructor
-  const nft = m.contract("NFT");
+  // Deploy the NFT contract
+  const nft = m.contract("NFT", []);
 
   return { nft };
 });

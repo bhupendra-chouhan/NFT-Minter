@@ -46,13 +46,6 @@ const Metadata = () => {
     }));
   };
 
-  const handleAddAttribute = () => {
-    setNftData((prevData) => ({
-      ...prevData,
-      attributes: [...prevData.attributes, { trait_type: "", value: "" }],
-    }));
-  };
-
   const handleCopy = () => {
     navigator.clipboard
       .writeText(JSON.stringify(nftData, null, 2))
@@ -75,7 +68,7 @@ const Metadata = () => {
         </h2>
         <div className="flex flex-col gap-2 ">
           <label className="flex gap-5 border-4 p-2 rounded-lg">
-            Name* :
+            Name*:
             <input
               type="text"
               name="name"
@@ -83,10 +76,11 @@ const Metadata = () => {
               onChange={handleInputChange}
               placeholder="ex. Cool Monkey"
               required
+              className="w-full"
             />
           </label>
           <label className="flex gap-5 border-4 p-2 rounded-lg">
-            Description* :
+            Description*:
             <input
               type="text"
               name="description"
@@ -94,6 +88,7 @@ const Metadata = () => {
               onChange={handleInputChange}
               placeholder="ex. This is the Cool-Monkey NFT"
               required
+              className="w-full"
             />
           </label>
           <label className="flex gap-5 border-4 p-2 rounded-lg">
@@ -104,6 +99,7 @@ const Metadata = () => {
               value={uploadedNFTImageURI}
               disabled
               required
+              className="w-full"
             />
           </label>
           <p className="text-xl font-bold w-fit p-1 border-b-4 border-gray-600 rounded-lg">
