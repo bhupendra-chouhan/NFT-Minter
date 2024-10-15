@@ -1,4 +1,4 @@
-# Open-Sourced NFT-Minter
+# NFT-Minter (Open-Sourced)
 
 ---
 ## Project Description: 
@@ -11,6 +11,13 @@ The vision of the NFT-Minter Project is to create a collaborative, beginner-frie
 
 ---
 ## Some Project Screenshots:
+### - Desktop view:
+![image](https://github.com/user-attachments/assets/59cd907d-7831-432a-9085-1d0959b735ad)
+![image](https://github.com/user-attachments/assets/70d81651-6449-49df-9ae2-dbbad424ac1c)
+
+### - Mobile View:
+![image](https://github.com/user-attachments/assets/86674a63-c78c-4f11-ab81-3d159e55b7cf)
+![image](https://github.com/user-attachments/assets/1120c36a-d9af-4e8f-8a38-a06b4945787c)
 
 ---
 ## Technologies Used:
