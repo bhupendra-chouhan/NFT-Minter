@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 import { PinataSDK } from "pinata-web3";
-import { pinata_info } from '../../constants/constants';
 
 const pinata = new PinataSDK({
-  pinataJwt: pinata_info.PINATA_JWT,
-  pinataGateway: pinata_info.PINATA_GATEWAY,
+  pinataJwt: process.env.REACT_APP_PINATA_JWT,
+  pinataGateway: process.env.REACT_APP_PINATA_GATEWAY,
 });
 
 const IpfsNftUpload = ({ setUploadedNFTImageURI }) => {
@@ -29,14 +28,14 @@ const IpfsNftUpload = ({ setUploadedNFTImageURI }) => {
       setIsLoading(false);
       setIpfsHash(upload.IpfsHash);
       setUploadedNFTImageURI(upload.IpfsHash);
-      console.log(upload);
+      // console.log(upload);
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-2 items-center justify-between max-w-[90%] h-80">
+    <div className="flex flex-col md:flex-row gap-2 items-center justify-between md:max-w-[90%] h-fit">
       <div className="flex flex-col gap-2">
         <input
           className="border-2 rounded-lg"
@@ -59,7 +58,7 @@ const IpfsNftUpload = ({ setUploadedNFTImageURI }) => {
           <div className="bg-orange-400 p-2 border-b-8 border-gray-600  rounded-xl">
             IPFS Hash:
           </div>
-          <p className="border-gray-600 border-2 p-2 rounded-xl">{ipfsHash}</p>
+          <p className="border-gray-600 border-2 p-2 w-1/2 sm:w-fit overflow-auto rounded-xl">{ipfsHash}</p>
           <div className="bg-orange-400 p-2 border-b-8 border-gray-600  rounded-xl">
             Image Uploaded:
           </div>

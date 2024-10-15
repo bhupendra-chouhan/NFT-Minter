@@ -7,7 +7,7 @@ import { pubAddressData } from "../../AppLayout";
 const Metadata = () => {
   const { uploadedNFTImageURI } = useContext(uploadedNFTImageURIData);
   const { pubAddress } = useContext(pubAddressData);
-  console.log(uploadedNFTImageURI);
+  // console.log(uploadedNFTImageURI);
 
   const [nftData, setNftData] = useState({
     name: "",
@@ -45,7 +45,7 @@ const Metadata = () => {
       attributes: updatedAttributes,
     }));
   };
-
+  
   const handleCopy = () => {
     navigator.clipboard
       .writeText(JSON.stringify(nftData, null, 2))
@@ -62,11 +62,10 @@ const Metadata = () => {
 
   return (
     <div className="flex sm:flex-row flex-col gap-5 justify-center">
-      <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-2">
         <h2 className="text-2xl font-bold w-fit p-1 border-b-4 border-gray-600 rounded-lg">
-          NFT Manager
+          Create NFT Metadata
         </h2>
-        <div className="flex flex-col gap-2 ">
           <label className="flex gap-5 border-4 p-2 rounded-lg">
             Name*:
             <input
@@ -79,7 +78,7 @@ const Metadata = () => {
               className="w-full"
             />
           </label>
-          <label className="flex gap-5 border-4 p-2 rounded-lg">
+          <label className="flex gap-5 border-4 p-2 rounded-lg w-full md:w-full">
             Description*:
             <input
               type="text"
@@ -97,9 +96,9 @@ const Metadata = () => {
               type="text"
               name="image"
               value={uploadedNFTImageURI}
+              className="w-full"
               disabled
               required
-              className="w-full"
             />
           </label>
           <p className="text-xl font-bold w-fit p-1 border-b-4 border-gray-600 rounded-lg">
@@ -111,10 +110,11 @@ const Metadata = () => {
                 Trait Type* : {attr.trait_type}
               </label>
               <label className="flex gap-5 border-4 p-2 rounded-lg">
-                Value* :
+                Value*:
                 <input
                   type="text"
                   value={attr.value}
+                  className="w-full"
                   required
                   onChange={(e) =>
                     handleAttributeChange(index, "value", e.target.value)
@@ -124,28 +124,27 @@ const Metadata = () => {
             </div>
           ))}
         </div>
-      </div>
 
-      <div className="flex flex-col items-center">
-        <div className="flex justify-center gap-2">
-          <h2 className="text-2xl font-bold w-fit p-1 border-b-4 border-gray-600 rounded-lg">
-            Updated NFT JSON Metadata
-          </h2>
-          <button
-            className="border content- rounded-lg bg-cyan-200 p-2 hover:bg-cyan-300"
-            onClick={handleCopy}
-          >
-            Copy to Clipboard
-          </button>
-        </div>
-        <div>
-          {copyMessage && <p style={{ color: "green" }}>{copyMessage}</p>}
-        </div>
-        <div className="w-[100%]">
-          <SyntaxHighlighter language="json" style={solarizedlight}>
-            {JSON.stringify(nftData, null, 2)}
-          </SyntaxHighlighter>
-        </div>
+        <div className="flex flex-col items-center">
+          <div className="flex justify-center gap-2">
+            <h2 className="text-2xl font-bold w-fit p-1 border-b-4 border-gray-600 rounded-lg">
+              Updated NFT JSON Metadata
+            </h2>
+            <button
+              className="border content- rounded-lg bg-cyan-200 p-2 hover:bg-cyan-300"
+              onClick={handleCopy}
+            >
+              Copy to Clipboard
+            </button>
+          </div>
+          <div>
+            {copyMessage && <p style={{ color: "green" }}>{copyMessage}</p>}
+          </div>
+          <div className="w-full max-w-xs min-w-full overflow-hidden">
+            <SyntaxHighlighter language="json" style={solarizedlight}>
+              {JSON.stringify(nftData, null, 2)}
+            </SyntaxHighlighter>
+          </div>
       </div>
     </div>
   );

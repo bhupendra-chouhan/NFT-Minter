@@ -8,7 +8,7 @@ const CreateNft = () => {
 
   return (
     <uploadedNFTImageURIData.Provider value={{uploadedNFTImageURI}}>
-      <div className="flex flex-col gap-2 items-center mt-10">
+      <div className="flex flex-col mx-5 gap-5 items-center mt-10">
         {/* IPFS upload */}
         <IpfsNftUpload setUploadedNFTImageURI={_setUploadedNFTImageURI} />
 
