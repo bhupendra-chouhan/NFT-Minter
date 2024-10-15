@@ -1,0 +1,19 @@
+{
+    "name": "CratePass",
+    "description": "This represents a dApp made to replace our regular centralised ",
+    "image": "bafkreid3ondvqxmdzfbclp2yg34s72kjh6npxtceo6jfwmzsvsbg2mdcbm",
+    "attributes": [
+        {
+            "trait_type": "Creator's Name",
+            "value": "Bhupendra Chouhan"
+        },
+        {
+            "trait_type": "Creator's GitHub ID",
+            "value": "bhupendra-chouhan"
+        },
+        {
+            "trait_type": "Creator's Wallet Address",
+            "value": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"
+        }
+    ]
+}

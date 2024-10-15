@@ -7,7 +7,7 @@ import { pubAddressData } from "../../AppLayout";
 const Metadata = () => {
   const { uploadedNFTImageURI } = useContext(uploadedNFTImageURIData);
   const { pubAddress } = useContext(pubAddressData);
-  console.log(uploadedNFTImageURI);
+  // console.log(uploadedNFTImageURI);
 
   const [nftData, setNftData] = useState({
     name: "",
@@ -45,14 +45,7 @@ const Metadata = () => {
       attributes: updatedAttributes,
     }));
   };
-
-  const handleAddAttribute = () => {
-    setNftData((prevData) => ({
-      ...prevData,
-      attributes: [...prevData.attributes, { trait_type: "", value: "" }],
-    }));
-  };
-
+  
   const handleCopy = () => {
     navigator.clipboard
       .writeText(JSON.stringify(nftData, null, 2))
@@ -71,11 +64,11 @@ const Metadata = () => {
     <div className="flex sm:flex-row flex-col gap-5 justify-center">
       <div className="flex flex-col gap-3">
         <h2 className="text-2xl font-bold w-fit p-1 border-b-4 border-gray-600 rounded-lg">
-          NFT Manager
+          Create NFT Metadata
         </h2>
-        <div className="flex flex-col gap-2 ">
+        <div className="flex flex-col gap-2">
           <label className="flex gap-5 border-4 p-2 rounded-lg">
-            Name* :
+            Name*:
             <input
               type="text"
               name="name"
@@ -83,10 +76,11 @@ const Metadata = () => {
               onChange={handleInputChange}
               placeholder="ex. Cool Monkey"
               required
+              className="w-full"
             />
           </label>
-          <label className="flex gap-5 border-4 p-2 rounded-lg">
-            Description* :
+          <label className="flex gap-5 border-4 p-2 rounded-lg w-full md:w-full">
+            Description*:
             <input
               type="text"
               name="description"
@@ -94,6 +88,7 @@ const Metadata = () => {
               onChange={handleInputChange}
               placeholder="ex. This is the Cool-Monkey NFT"
               required
+              className="w-full"
             />
           </label>
           <label className="flex gap-5 border-4 p-2 rounded-lg">
@@ -102,6 +97,7 @@ const Metadata = () => {
               type="text"
               name="image"
               value={uploadedNFTImageURI}
+              className="w-full"
               disabled
               required
             />
@@ -115,10 +111,11 @@ const Metadata = () => {
                 Trait Type* : {attr.trait_type}
               </label>
               <label className="flex gap-5 border-4 p-2 rounded-lg">
-                Value* :
+                Value*:
                 <input
                   type="text"
                   value={attr.value}
+                  className="w-full"
                   required
                   onChange={(e) =>
                     handleAttributeChange(index, "value", e.target.value)
@@ -145,7 +142,7 @@ const Metadata = () => {
         <div>
           {copyMessage && <p style={{ color: "green" }}>{copyMessage}</p>}
         </div>
-        <div className="w-[100%]">
+        <div className="w-full max-w-xs min-w-full overflow-hidden">
           <SyntaxHighlighter language="json" style={solarizedlight}>
             {JSON.stringify(nftData, null, 2)}
           </SyntaxHighlighter>

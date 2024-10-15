@@ -10,7 +10,7 @@ contract NFT is ERC721URIStorage {
 
     constructor() ERC721("Bhupendra's NFT", "BNFT") {}
 
-    function mint(string memory _tokenURI) external returns (uint) {
+    function mint(string memory _tokenURI) public returns (uint) {
         _nftIds.increment();
         uint256 newNftId = _nftIds.current();
         _safeMint(msg.sender, newNftId);
@@ -19,7 +19,7 @@ contract NFT is ERC721URIStorage {
     }
 
     // New function to get URIs of all created tokens
-    function getAllTokenURIs() external view returns (string[] memory) {
+    function getAllTokenURIs() public view returns (string[] memory) {
         uint256 totalNFTs = _nftIds.current();
         string[] memory tokenURIs = new string[](totalNFTs);
 

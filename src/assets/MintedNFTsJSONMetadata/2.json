@@ -1,0 +1,19 @@
+{
+    "name": "Pixel Brawler",
+    "description": "Pixel Brawler is a bold, 8-bit warrior with a fierce attitude and a powerful stance. Dressed in a cyberpunk vest with a pixelated skull emblem, he exudes strength and defiance. With a sharp gaze and neon-hued background, this digital fighter stands ready for action in the world of blockchain brawls.",
+    "image": "bafkreiaqw6xixmkzc2pc74i7rtamymjgre5vvfdbmzbpb4sxya3u6x5n7q",
+    "attributes": [
+        {
+            "trait_type": "Creator's Name",
+            "value": "Bhupendra Chouhan"
+        },
+        {
+            "trait_type": "Creator's GitHub ID",
+            "value": "bhupendra-chouhan"
+        },
+        {
+            "trait_type": "Creator's Wallet Address",
+            "value": "0x43167277803bef1eb29532676a930d29323476d6"
+        }
+    ]
+}
