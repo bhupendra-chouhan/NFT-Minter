@@ -33,7 +33,7 @@ const Header = ({ setPubAddress }) => {
 
   return (
     <header className="flex justify-between items-center p-4 bg-gray-800 text-white">
-      <h1 className="m-0 text-3xl min-w-fit">NFT Minter</h1>
+      <h1 className="m-0 text-5xl font-bold min-w-fit">NFT Minter</h1>
       <div
         onClick={() => handleOpenMenu()}
         className="text-4xl absolute top-4 right-3 md:hidden cursor-pointer"
@@ -59,6 +59,12 @@ const Header = ({ setPubAddress }) => {
               className="cursor-pointer border-blue-400 hover:bg-blue-500 hover:text-white text-black md:text-white  border rounded-lg p-2 hover:text-blue-500"
             >
               <Link to="/create-nft">Create NFT</Link>
+            </li>
+            <li
+              key={2}
+              className="cursor-pointer border-blue-400 hover:bg-blue-500 hover:text-white text-black md:text-white  border rounded-lg p-2 hover:text-blue-500"
+            >
+              <Link to="https://github.com/bhupendra-chouhan/NFT-Minter" target="_blank">GitHub</Link>
             </li>
           </ul>
         </div>
