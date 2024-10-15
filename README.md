@@ -37,12 +37,10 @@ The vision of the NFT-Minter Project is to create a collaborative, beginner-frie
     ```npm --force install```
 3. Create a ```.env``` file in the root directory, and copy-paste the environment variable mentioned below into it:
     ```
-    EDUCHAIN_DEPLOYER_PRIVATE_KEY=""
     EDUCHAIN_NETWORK_RPC_URL="https://open-campus-codex-sepolia.drpc.org"
     REACT_APP_EDUCHAIN_CHAIN_ID=656476
     REACT_APP_EDUCHAIN_DEPLOYED_SMART_CONTRACT_ADDRESS="0x7F3ad6b705251D1EC4F3B10473AdA9Ed93753BAb"
 
-    THIRDWEB_SECRET_KEY=""
     REACT_APP_THIRDWEB_CLIENT_ID=""
 
     REACT_APP_PINATA_JWT=""
